@@ -1,0 +1,76 @@
+/* ============================================= */
+/*                Header                         */
+/* ============================================= */
+
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: $header-bg-color;
+  color: $header-txt-color;
+  padding: 4px 15px;
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    padding: 6px 15px;
+  }
+}
+
+.logo {
+  flex: 1 0;
+}
+
+.notifications-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  margin-right: 5px;
+
+  svg {
+    width: 1.3em;
+    height: 1.3em;
+
+    fill: $bell-color;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 7px;
+
+    border-radius: 50%;
+    background-color: $accent-one;
+    padding: 3px;
+  }
+
+  &:hover {
+    svg {
+      animation: shake .4s ease-out forwards;
+    }
+  }
+
+}
+
+.user-profile-link {
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-left: 1px solid darken($primary-color, 10%);
+  padding-left: 5px;
+
+  img {
+    width: 1.9em;
+    height: 1.9em;
+    border-radius: 50%;
+
+    margin: 0 10px;
+  }
+}

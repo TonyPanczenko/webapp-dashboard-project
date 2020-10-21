@@ -1,0 +1,349 @@
+/* ============================================= */
+/*                  Widgets                      */
+/* ============================================= */
+
+.top-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+  background-color: $widget-bg-color;
+  padding: 10px 10px;
+
+  .current-page {
+    display: none;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  input {
+    position: relative;
+    width: 100%;
+
+    background-color: $subtle-bg-color;
+    border-radius: 5px;
+    border: 1px solid $subtle-border-color;
+    padding: 10px 10px;
+  }
+
+  svg {
+    position: absolute;
+    right: 25px;
+    width: 18px;
+    height: 18px;
+
+    fill: $search-icon-color;
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    background-color: $subtle-bg-color;
+    padding: 0;
+
+    .current-page {
+      display: block;
+      height: 60px;
+      margin: 0;
+      padding: 20px;
+      border-right: 1px solid $subtle-border-color;
+      border-bottom: 0;
+      background-color: #fff;
+    }
+
+    .search-container {
+      border-bottom: 1px solid $subtle-border-color;
+      display: flex;
+      flex-direction: row-reverse;
+      height: 60px;
+    }
+
+    input {
+      background-color: #fff;
+      margin: 10px;
+      border-bottom: 1px solid $subtle-border-color;
+      max-width: 300px;
+    }
+  }
+}
+
+.alert-space {
+  background-color: $widget-bg-color;
+
+  transition: height .5s ease-out;
+
+  .alert {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    background-color: $alert-bg-color;
+    color: $alert-txt-color;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+
+    p {
+      flex: 1 0;
+      margin: 10px 0;
+    }
+
+    span:nth-child(1) {
+      padding-right: 10px;
+    }
+  }
+
+  .old-alerts {
+    overflow: hidden;
+    height: 0px;
+
+    .alert {
+      background-color: lighten($alert-bg-color, 15%);
+    }
+
+    .alert:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    .alert {
+      margin: 10px 20px;
+    }
+  }
+}
+
+.widget {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid $subtle-border-color;
+  background-color: #fff;
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    padding: 20px;
+
+    h3 {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.traffic {
+  h3 {
+    flex: 1 0;
+  }
+}
+
+@media screen and (min-width: $mq-breakpoint-medium) {
+  .traffic .radio-container {
+    margin: 0 0 15px;
+  }
+
+  .daily-traffic {
+    border-right: 1px solid $subtle-border-color;
+  }
+}
+
+.social-stats {
+  .flex-row {
+    flex-direction: column;
+
+    .social-brand {
+      display: flex;
+      align-items: center;
+      width: calc(140px + 40%);
+      max-width: 280px;
+
+      border: 1px solid $subtle-border-color;
+      border-radius: 5px;
+      background-color: $subtle-bg-color;
+      padding: 15px 20px;
+      margin: 10px auto;
+
+      .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $social-icon-bg-color;
+        border-radius: 50%;
+        padding: 18px;
+
+        svg {
+          width: 32px;
+          height: 32px;
+          fill: $social-icon-color;
+        }
+      }
+
+      p {
+        margin: 0 0 0 15px;
+      }
+    }
+
+    @media screen and (min-width: $mq-breakpoint-medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .social-brand {
+        flex: 0 0 280px;
+        margin: 10px 10px;
+      }
+    }
+
+    @media screen and (min-width: $mq-breakpoint-large) {
+      .social-brand:first-child {
+        margin-left: 0;
+      }
+
+      .social-brand:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.new-members, .recent-activity {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 500px;
+      height: 70px;
+      margin: 0 auto;
+
+      border-bottom: 1px solid $subtle-border-color;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      .member-picture {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      p {
+        margin: 3px 0 3px 10px;
+      }
+    }
+  }
+}
+
+.new-members .join-time {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.recent-activity {
+  .activity-details {
+    flex: 1 0;
+    margin-right: 25px;
+  }
+
+  a {
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      fill: $arrow-icon-color;
+    }
+  }
+
+  @media screen and (min-width: $mq-breakpoint-large) {
+    border-left: 1px solid $subtle-border-color;
+  }
+}
+
+.message-user, .settings {
+
+  .autocomplete {
+    width: 100%;
+  }
+
+  input[type="text"], textarea, select {
+    width: 100%;
+
+    background-color: $subtle-bg-color;
+    border-radius: 5px;
+    border: 1px solid $subtle-border-color;
+    padding: 10px 10px;
+    margin: 0 0 15px 0;
+    resize: none;
+  }
+}
+
+.message-user {
+  .confirm {
+    margin: 10px auto;
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    border-bottom: 0;
+  }
+}
+
+.settings {
+  .toggle-desc {
+    width: 190px;
+  }
+
+  .flex-row {
+    margin: 10px 0;
+  }
+
+  select {
+    margin-top: 20px;
+
+    option:nth-child(1) {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    border-left: 1px solid $subtle-border-color;
+    border-bottom: 0;
+  }
+}
+
+.popup {
+  position: fixed;
+  white-space: nowrap;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  top: 0px;
+  z-index: 1000;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  color: #fff;
+
+  transition: transform .4s ease-out, opacity .4s ease-out;
+}

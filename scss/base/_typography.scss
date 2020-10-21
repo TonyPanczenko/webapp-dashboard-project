@@ -1,0 +1,139 @@
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app-header {
+
+  h1.logo {
+    font-size: 1.1em;
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .user-name {
+    font-size: 0.9em;
+  }
+}
+
+input::placeholder, textarea::placeholder, select {
+  color: darken($subtle-border-color, 20%);
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+input, textarea {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.top-bar, .widget {
+  color: $widget-txt-color;
+}
+
+.alert {
+  font-size: 0.8em;
+  line-height: 1.2em;
+
+  span:nth-child(1) {
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.social-stats {
+
+  p.brand-name {
+    color: $primary-color;
+    font-weight: 700;
+  }
+
+  p.main-stat {
+    font-size: 2.6em;
+    font-weight: 300;
+  }
+}
+
+.new-members {
+  .member-name {
+    font-size: 0.9em;
+  }
+
+  .member-email {
+    font-size: 0.8em;
+    color: $primary-color;
+  }
+
+  .join-time {
+    font-size: 0.8em;
+    font-weight: 300;
+  }
+}
+
+.recent-activity {
+  .activity-name {
+    font-size: 0.9em;
+  }
+
+  .activity-time {
+    font-size: 0.8em;
+  }
+}
+
+input[type="button"], input[type="submit"], button {
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.settings {
+  .toggle-desc {
+    font-size: 0.9em;
+  }
+
+  select option {
+    color: #000;
+  }
+}
+
+.radio-container {
+  font-size: 0.8em;
+  font-weight: 600;
+}

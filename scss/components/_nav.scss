@@ -1,0 +1,68 @@
+/* ============================================= */
+/*                   Nav                         */
+/* ============================================= */
+
+.app-nav {
+  display: flex;
+
+  background-color: $nav-bg-color;
+  padding: 10px 10px;
+  margin-bottom: -20px;
+
+  a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+
+    svg {
+      width: 25px;
+      height: 25px;
+
+      fill: $icon-color--off;
+    }
+  }
+
+  a.selected {
+    position: relative;
+    height: 54px;
+
+    background-color: #fff;
+    border-radius: 5px;
+
+    svg {
+      position: relative;
+      top: -5px;
+
+      fill: $icon-color--on-mobile;
+    }
+  }
+
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 0;
+
+    a {
+      width: 65px;
+      margin: 10px 0 5px 0;
+      border-radius: 0;
+      border: 2px solid $secondary-color;
+    }
+
+    a.selected {
+      background-color: transparent;
+      height: 44px;
+      border-left: 2px solid $accent-one;
+      border-radius: 0;
+
+      svg {
+        fill: $icon-color--on;
+        position: static;
+      }
+    }
+  }
+}
