@@ -154,6 +154,14 @@
   }
 }
 
+.mobile-users {
+  @media screen and (min-width: $mq-breakpoint-medium) {
+    .chart-container {
+      max-width: 335px;
+    }
+  }
+}
+
 .social-stats {
   .flex-row {
     flex-direction: column;

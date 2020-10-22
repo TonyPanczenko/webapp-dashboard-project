@@ -847,6 +847,12 @@ body {
     border-right: 1px solid #dfdfdf;
   }
 }
+@media screen and (min-width: 768px) {
+  .mobile-users .chart-container {
+    max-width: 335px;
+  }
+}
+
 .social-stats .flex-row {
   flex-direction: column;
 }
